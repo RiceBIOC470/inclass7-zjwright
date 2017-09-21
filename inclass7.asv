@@ -12,21 +12,15 @@
 % E. In which human tissues is it expressed most abundantly? the colon
 
 %2. A. Use the unigene database to find the accession number for a genbank
-% entry containing the complete coding sequence of Cdx2. NM_001265.5
+% entry containing the complete coding sequence of Cdx2. NP_001256.3
 
 % B. Use MATLAB to read the genbank information corresponding to that
 % accession number. 
-Cdx2_info = getgenbank('NM_001265.5');
-
+genebank_dat = genbankread('NM_001265.gb')
 % C. Use the information read in to find the position of the start and stop
 % codon within the sequence. What are the parts of the sequence before the start codon 
 % and after the stop codon?
-Cdx2_info.CDS.location;
-%'363..1304' parts before start=5'UTR, parts after stop=3'UTR
 
 % D. Use the protein_id to read the information on the protein. Use the
 % information you read to determine where the homeobox domain of the protein is.
 % Hint: see the field "Features". 
-Cdx2_protein=getgenpept('NP_001256.3');
-Cdx2_protein_info=Cdx2_protein.Features;
-%190..242  = homeobox domain
